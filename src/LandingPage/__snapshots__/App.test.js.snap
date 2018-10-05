@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When app renders Link to playGame matches snapshot game 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="App-header"
+  >
+    <img
+      alt="logo"
+      className="App-logo"
+      src="logo.svg"
+    />
+    <h1
+      className="App-title"
+    >
+      TIC TAC TOE
+    </h1>
+  </div>
+  <ul>
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      <button
+        className="btn btn-secondary btn-lg"
+        onClick={[Function]}
+        type={undefined}
+      >
+        Home
+      </button>
+    </a>
+    <a
+      href="/playgame"
+      onClick={[Function]}
+    >
+      <button
+        className="btn btn-secondary btn-lg"
+        onClick={[Function]}
+        type={undefined}
+      >
+        Play Game
+      </button>
+    </a>
+    <a
+      href="/gamerules"
+      onClick={[Function]}
+    >
+      <button
+        className="btn btn-secondary btn-lg"
+        onClick={[Function]}
+        type={undefined}
+      >
+        About Tic-Tac-Toe
+      </button>
+    </a>
+    <a
+      href="/signup"
+      onClick={[Function]}
+    >
+      <button
+        className="btn btn-secondary btn-lg"
+        onClick={[Function]}
+        type={undefined}
+      >
+        Sign Up
+      </button>
+    </a>
+  </ul>
+  <hr />
+  <div>
+    Home
+  </div>
+</div>
+`;

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When Home is rendered Home content is rendered 1`] = `
+<div>
+  Home
+</div>
+`;

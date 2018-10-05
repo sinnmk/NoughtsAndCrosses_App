@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When Header is rendered Header displays Header content 1`] = `
+<div
+  className="App-header"
+>
+  <img
+    alt="logo"
+    className="App-logo"
+    src="logo.svg"
+  />
+  <h1
+    className="App-title"
+  >
+    TIC TAC TOE
+  </h1>
+</div>
+`;
