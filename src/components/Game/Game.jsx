@@ -6,12 +6,21 @@ export default class Game extends Component {
         super(props);
         this.onRadioBtnClick = this.onRadioBtnClick.bind(this);
       }
-    
-      onRadioBtnClick(rSelected) {
-        this.setState({ rSelected });
-      }
-    
-      render() {
-        return GameTemplate.call(this);
-      }
+
+    componentDidMount(){
+        fetch('https://localhost:64353')
+        .then(results => {
+            return results.json();
+        }).then(data => {
+            let signIn = data.results.map((form) => {
+            })
+        })
+        this.setState({})
     }
+    onRadioBtnClick(rSelected) {
+      this.setState({ rSelected });
+    }
+    render() {
+      return GameTemplate.call(this);
+    }
+  }
