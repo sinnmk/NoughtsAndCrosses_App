@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import App from './App';
-import Header from '../components/Header/Header';
-import Home from '../components/Home/Home';
+import Header from './Header/Header';
+import Home from './Home/Home';
 import {Button} from 'reactstrap';
-import Game from '../components/Game/Game';
-import GameRules from '../components/GameRules/GameRules';
-import Signup from '../components/Signup/Signup';
+import Game from './Game/Game';
+import GameRules from './GameRules/GameRules';
+import Signup from './Signup/Signup';
 
 describe('When app renders', () =>{
 

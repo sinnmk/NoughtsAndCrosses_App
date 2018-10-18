@@ -1,12 +1,12 @@
 import React from 'react';
 import {Button} from 'reactstrap'
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
-import Header from '../components/Header/Header';
-import Home from '../components/Home/Home';
-import Signup from '../components/SignUp/SignUp';
-import Signin from '../components/SignIn/SignIn';
-import GameRules from '../components/GameRules/GameRules';
-import Game from '../components/Game/Game';
+import Header from './Header/Header';
+import Home from './Home/Home';
+import Signup from './SignUp/SignUp';
+import Signin from './SignIn/SignIn';
+import GameRules from './GameRules/GameRules';
+import Game from './Game/Game';
 
 const AppTemplate = () =>{
   return(
