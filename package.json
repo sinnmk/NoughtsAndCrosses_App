@@ -20,6 +20,7 @@
     "react": "^16.5.2",
     "react-board": "^1.1.0",
     "react-bootstrap": "^0.32.4",
+    "react-canvas-draw": "^0.1.9",
     "react-dom": "^16.5.2",
     "react-fancy-button": "^1.0.5",
     "react-konva": "^16.5.2",
@@ -28,7 +29,6 @@
     "react-strap": "0.0.1",
     "react-test-renderer": "^16.5.2",
     "reactstrap": "^6.4.0",
-    "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.9"
   },
@@ -37,5 +37,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --watchAll",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "webpack": "^4.21.0"
   }
 }

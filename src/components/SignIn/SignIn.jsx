@@ -1,17 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import FormControl from '@material-ui/core/FormControl';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
 import LockIcon from '@material-ui/icons/LockOutlined';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import withStyles from '@material-ui/core/styles/withStyles';
+import {withStyles} from '@material-ui/core/styles';
+import {Typography, Paper, InputLabel, Input, Checkbox, FormControl, FormControlLabel, CssBaseline, Button, Avatar} from '@material-ui/core'
 
 const styles = theme => ({
   layout: {
@@ -98,34 +89,3 @@ SignIn.propTypes = {
 };
 
 export default withStyles(styles)(SignIn);
-
-
-// import {Component} from 'react';
-// import SignInTemplate from './SignInTemplate';
-
-// export default class Signup extends Component{
-//     constructor(props){
-//         super(props);
-//         this.state= {}
-//     }
-
-//     onChange(event){
-
-//     }
-
-//     render(){
-//         return SignInTemplate.call(this);
-//     }
-
-//     validateEmail(e) {
-//         const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-//         const { validate } = this.state
-//           if (emailRex.test(e.target.value)) {
-//             validate.emailState = 'has-success'
-//           } else {
-//             validate.emailState = 'has-danger'
-//           }
-//           this.setState({ validate })
-//         }
-
-// }
