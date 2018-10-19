@@ -8,7 +8,7 @@ export default class LandingPage extends Component{
     <div className="navigation">
       <div className="header"><NavigationTopBar/></div>
       <div className="body-container">
-        
+            
       </div>
     </div>
     )
