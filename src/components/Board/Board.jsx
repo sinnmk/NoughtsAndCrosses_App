@@ -1,41 +1,32 @@
 import React, {Component} from 'react';
-import Konva, {Util} from 'konva';
+import dotnetify from 'dotnetify';
 
-export default class Board extends Component {
+dotnetify.hubServerUrl = "http://localhost:50000"
+
+class Board extends Component {
 
     constructor(props){
-        super(props)
+        super(props);
         this.state = {
-            color: 'green'
+            size: [],
+            boardState: []
         }
-        this.handleClick = this.handleClick.bind(this);
-        this.board = [["X", "O", ""],["X", "", ""], ["X", "O", "O"]];
-        this.clickHandler = this.clickHandler.bind(this);
+        this.connection = dotnetify.react.connect("board", this);
+        this.dispatchState = state => this.connection.$dispatch(state);
     }
-
-    clickHandler({col, row, cellName, cellValue}){
-    }
-
-    handleClick(){
-        this.setState({
-            color: Konva.Util.getRandomColor()
-        });
+    
+    componentWillUnmount(){
+        this.connection.$destroy();
     }
 
     render(){
-        return (
-            <Rect
-                x={10} y={10} width={50} height={50}
-                fill={this.state.color}
-                shadowBlur={10}
-                onClick={this.handleClick}
-            />
-        );
-        // return React.createElement(ReactBoard, {
-        //     size: [3, 3],
-        //     values: this.board,
-        //     highlight: [[3, 3]],
-        //     clickHandler: this.clickHandler
-        // })
+        return(
+            <div className="Board-intro">
+                <p>Board size is: {this.state.size}</p>
+                <p>Board state is: {this.state.boardState}</p>
+            </div>
+        )
     }
 }
+
+export default Board;

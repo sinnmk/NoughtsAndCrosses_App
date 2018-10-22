@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Game from '../components/Game/Game'
-import SignIn from '../components/SignIn/SignIn';
-import SignUp from '../components/SignUp/SignUp';
-import Setup from '../components/Setup/Setup'
+import Game from '../Game/Game';
+import SignIn from '../SignIn/SignIn';
+import SignUp from '../SignUp/SignUp';
+import Rules from '../GameRules/GameRules';
 import PropTypes from 'prop-types';
-import { Button, IconButton, withStyles, AppBar, Tabs, Tab, Typography } from '@material-ui/core'
+import { withStyles, AppBar, Tabs, Tab, Typography } from '@material-ui/core'
 
 function TabContainer(props) {
     return (
@@ -42,15 +42,14 @@ class NavigationTopBar extends Component {
             <div className={classes.root}>
                 <AppBar position="static">
                     <Tabs value={value} onChange={this.handleChange}>
-                        <Tab label="Play Game" />
-                        <Tab label="Setup" />
+                        <Tab label="Play Game"/>
+                        <Tab label="Rules" />
                         <Tab label="Log In" />
                         <Tab label="Register" />
                     </Tabs>
-                    <Button color="inherit">Back</Button>
                 </AppBar>
                 {value === 0 && <TabContainer><Game/></TabContainer>}
-                {value === 1 && <TabContainer><Setup/></TabContainer>}
+                {value === 1 && <TabContainer><Rules/></TabContainer>}
                 {value === 2 && <TabContainer><SignIn/></TabContainer>}
                 {value === 3 && <TabContainer><SignUp/></TabContainer>}
             </div>

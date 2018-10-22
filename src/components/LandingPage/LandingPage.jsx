@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import NavigationTopBar from '../Navigation';
+import NavigationTopBar from '../NavigationTopBar/Navigation'
 
 export default class LandingPage extends Component{
 
@@ -8,7 +8,6 @@ export default class LandingPage extends Component{
     <div className="navigation">
       <div className="header"><NavigationTopBar/></div>
       <div className="body-container">
-            
       </div>
     </div>
     )
