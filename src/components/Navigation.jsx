@@ -4,7 +4,7 @@ import SignIn from '../components/SignIn/SignIn';
 import SignUp from '../components/SignUp/SignUp';
 import Setup from '../components/Setup/Setup'
 import PropTypes from 'prop-types';
-import {Button, IconButton, withStyles, AppBar, Tabs, Tab, Typography } from '@material-ui/core'
+import { Button, IconButton, withStyles, AppBar, Tabs, Tab, Typography } from '@material-ui/core'
 
 function TabContainer(props) {
     return (
@@ -50,9 +50,9 @@ class NavigationTopBar extends Component {
                     <Button color="inherit">Back</Button>
                 </AppBar>
                 {value === 0 && <TabContainer><Game/></TabContainer>}
-                {value === 1 && <TabContainer><Setup /></TabContainer>}
-                {value === 2 && <TabContainer><SignIn /></TabContainer>}
-                {value === 3 && <TabContainer><SignUp /></TabContainer>}
+                {value === 1 && <TabContainer><Setup/></TabContainer>}
+                {value === 2 && <TabContainer><SignIn/></TabContainer>}
+                {value === 3 && <TabContainer><SignUp/></TabContainer>}
             </div>
         );
     }

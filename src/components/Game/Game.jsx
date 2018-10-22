@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import Setup from '../Setup/Setup'
-import ReactDOM from 'react-dom'
+import Board from '../Board/Board'
 
 export default class Game extends Component {
 
     render(){
         return(
-            <Setup/>
+            <div><Board/></div>
         )
     }
   }

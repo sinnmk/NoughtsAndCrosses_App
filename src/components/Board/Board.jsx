@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import ReactBoard from 'react-board';
-import { Stage, Layer, Rect, Text } from 'react-konva';
-import Konva from 'konva';
+import Konva, {Util} from 'konva';
 
 export default class Board extends Component {
 
@@ -11,12 +9,13 @@ export default class Board extends Component {
             color: 'green'
         }
         this.handleClick = this.handleClick.bind(this);
-        // super(props);
-        // this.board = [["X", "O", ""],["X", "", ""], ["X", "O", "O"]];
-        // this.clickHandler = this.clickHandler.bind(this);
+        this.board = [["X", "O", ""],["X", "", ""], ["X", "O", "O"]];
+        this.clickHandler = this.clickHandler.bind(this);
     }
-    // clickHandler({col, row, cellName, cellValue}){
-    // }
+
+    clickHandler({col, row, cellName, cellValue}){
+    }
+
     handleClick(){
         this.setState({
             color: Konva.Util.getRandomColor()

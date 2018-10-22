@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import NavigationTopBar from '../Navigation'
 import { withStyles } from '@material-ui/core/styles';
 import {Drawer, AppBar, Toolbar, List, Typography, Divider} from '@material-ui/core'
 
