@@ -40,9 +40,9 @@ class NavigationTopBar extends Component {
 
         return (
             <div className={classes.root}>
-                <AppBar position="static">
+                <AppBar position="static" color="default">
                     <Tabs value={value} onChange={this.handleChange}>
-                        <Tab label="Play Game"/>
+                        <Tab label="Play Game" />
                         <Tab label="Rules" />
                         <Tab label="Log In" />
                         <Tab label="Register" />

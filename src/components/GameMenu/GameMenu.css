@@ -1,0 +1,13 @@
+.game-menu-container{
+    text-align:center;
+}
+
+.game-menu-header{
+    height: 150px;
+    padding: 0px;
+    text-decoration-color: cornflowerblue
+}
+
+.game-menu-body{
+    height: 300px;
+}

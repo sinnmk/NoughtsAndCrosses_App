@@ -1,15 +1,17 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import NavigationTopBar from '../NavigationTopBar/Navigation'
+import './LandingPage.css'
 
-export default class LandingPage extends Component{
+class LandingPage extends Component {
 
-  render(){
+  render() {
     return (
-    <div className="navigation">
-      <div className="header"><NavigationTopBar/></div>
-      <div className="body-container">
+      <div className="landing-page-navigation">
+        <div className="landing-page-header"><NavigationTopBar /></div>
+        <div className="landing-page-body-container">
+        </div>
       </div>
-    </div>
     )
   }
 }
+export default LandingPage;
