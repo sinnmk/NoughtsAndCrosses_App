@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import NavigationTopBar from '../NavigationTopBar/Navigation'
-import './LandingPage.css'
+import NavigationTopBar from '../NavigationTopBar/Navigation';
+import './LandingPage.css';
 
 class LandingPage extends Component {
 
