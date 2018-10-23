@@ -9,6 +9,7 @@ class LandingPage extends Component {
       <div className="landing-page-navigation">
         <div className="landing-page-header"><NavigationTopBar /></div>
         <div className="landing-page-body-container">
+
         </div>
       </div>
     )

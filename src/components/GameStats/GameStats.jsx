@@ -6,6 +6,9 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 
 const styles = {
   card: {
@@ -35,16 +38,18 @@ function SimpleCard(props) {
         <Typography className={classes.title} color="textSecondary" gutterBottom>
         Noughts+Crosses
         </Typography>
-        <Typography variant="h5" component="h2">
-          Game Rules
+        <Typography variant="h5" component="h7">
+        Stats
         </Typography>
         <Typography component="p">
-        The rules for playing noughts and crosses are very simple. 
-        Each player takes it in turn to place their X or O into one 
-        of the empty squares in the grid by clicking on it. 
-        To win the game get three of your symbols in a 
-        line horizontally, vertically or diagonally. 
-        For the first game, X begins.
+        <TableHead>
+          <TableRow>
+            <TableCell numeric>Game#</TableCell>
+            <TableCell>Name</TableCell>
+            <TableCell numeric>Moves</TableCell>
+            <TableCell numeric>Time</TableCell>
+          </TableRow>
+        </TableHead>
         </Typography>
       </CardContent>
       <CardActions>
@@ -59,4 +64,3 @@ SimpleCard.propTypes = {
 };
 
 export default withStyles(styles)(SimpleCard);
-

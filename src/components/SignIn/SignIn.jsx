@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LockIcon from '@material-ui/icons/LockOutlined';
 import {withStyles} from '@material-ui/core/styles';
 import {Typography, Paper, InputLabel, Input, Checkbox, FormControl, FormControlLabel, CssBaseline, Button, Avatar} from '@material-ui/core'
+import AccountIcon from '@material-ui/icons/AccountCircle';
 
 const styles = theme => ({
   layout: {
@@ -25,7 +25,7 @@ const styles = theme => ({
   },
   avatar: {
     margin: theme.spacing.unit,
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: '#808080',
   },
   form: {
     width: '100%', // Fix IE11 issue.
@@ -45,7 +45,7 @@ function SignIn(props) {
       <main className={classes.layout}>
         <Paper className={classes.paper}>
           <Avatar className={classes.avatar}>
-            <LockIcon />
+            <AccountIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign in
@@ -53,7 +53,7 @@ function SignIn(props) {
           <form className={classes.form}>
             <FormControl margin="normal" required fullWidth>
               <InputLabel htmlFor="email">Email Address</InputLabel>
-              <Input id="email" name="email" autoComplete="email" autoFocus />
+              <Input id="email" name="email" autoComplete="email"  autoFocus  />
             </FormControl>
             <FormControl margin="normal" required fullWidth>
               <InputLabel htmlFor="password">Password</InputLabel>
@@ -65,14 +65,14 @@ function SignIn(props) {
               />
             </FormControl>
             <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
+              control={<Checkbox value="remember" color="#808080" />}
               label="Remember me"
             />
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              color="primary"
+              color="#808080"
               className={classes.submit}
             >
               Sign in

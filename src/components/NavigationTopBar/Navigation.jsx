@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import Game from '../Game/Game';
 import SignIn from '../SignIn/SignIn';
+import Stats from '../GameStats/GameStats';
 import SignUp from '../SignUp/SignUp';
 import Rules from '../GameRules/GameRules';
 import PropTypes from 'prop-types';
 import { withStyles, AppBar, Tabs, Tab, Typography } from '@material-ui/core'
+import AccountIcon from '@material-ui/icons/AccountCircle';
+import HelpIcon from '@material-ui/icons/Help';
+import PlayCircle from '@material-ui/icons/PlayCircleFilled';
+import GroupAdd from '@material-ui/icons/GroupAdd';
+import AssessmentIcon from '@material-ui/icons/Assessment';
 
 function TabContainer(props) {
     return (
@@ -41,17 +47,19 @@ class NavigationTopBar extends Component {
         return (
             <div className={classes.root}>
                 <AppBar position="static" color="default">
-                    <Tabs value={value} onChange={this.handleChange}>
-                        <Tab label="Play Game" />
-                        <Tab label="Rules" />
-                        <Tab label="Log In" />
-                        <Tab label="Register" />
+                    <Tabs value={value} onChange={this.handleChange} centered>
+                        <Tab label="Play Game" icon={ <PlayCircle/> } />
+                        <Tab label="Rules" icon={ <HelpIcon/> } />
+                        <Tab label="Stats" icon={ <AssessmentIcon/> } />
+                        <Tab label="Log In" icon={ <AccountIcon/> } />
+                        <Tab label="Register" icon={ <GroupAdd/> } />
                     </Tabs>
                 </AppBar>
                 {value === 0 && <TabContainer><Game/></TabContainer>}
                 {value === 1 && <TabContainer><Rules/></TabContainer>}
-                {value === 2 && <TabContainer><SignIn/></TabContainer>}
-                {value === 3 && <TabContainer><SignUp/></TabContainer>}
+                {value === 2 && <TabContainer><Stats/></TabContainer>}
+                {value === 3 && <TabContainer><SignIn/></TabContainer>}
+                {value === 4 && <TabContainer><SignUp/></TabContainer>}
             </div>
         );
     }
