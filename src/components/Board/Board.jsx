@@ -1,32 +1,45 @@
 import React, {Component} from 'react';
-import dotnetify from 'dotnetify';
 
-dotnetify.hubServerUrl = "http://localhost:50000"
+    function Square(props) {
+        return (
+          <button className="square" onClick={props.onClick}>
+            {props.value}
+          </button>
+        );
+      }
+      
+    class Board extends Component {
 
-class Board extends Component {
-
-    constructor(props){
-        super(props);
-        this.state = {
-            size: [],
-            boardState: []
+        renderSquare(i) {
+            return (
+            <Square
+                value= ""
+                onClick={console.log("click")}
+            />
+            );
         }
-        this.connection = dotnetify.react.connect("board", this);
-        this.dispatchState = state => this.connection.$dispatch(state);
-    }
-    
-    componentWillUnmount(){
-        this.connection.$destroy();
-    }
-
-    render(){
-        return(
-            <div className="Board-intro">
-                <p>Board size is: {this.state.size}</p>
-                <p>Board state is: {this.state.boardState}</p>
+        
+        render() {
+            return (
+            <div>
+                <div className="board-row">
+                {this.renderSquare(0)}
+                {this.renderSquare(1)}
+                {this.renderSquare(2)}
+                </div>
+                <div className="board-row">
+                {this.renderSquare(3)}
+                {this.renderSquare(4)}
+                {this.renderSquare(5)}
+                </div>
+                <div className="board-row">
+                {this.renderSquare(6)}
+                {this.renderSquare(7)}
+                {this.renderSquare(8)}
+                </div>
             </div>
-        )
+            );
+        }
     }
-}
 
 export default Board;

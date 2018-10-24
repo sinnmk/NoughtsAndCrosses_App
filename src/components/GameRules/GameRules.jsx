@@ -6,25 +6,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Styles from './Styles';
 
-const styles = {
-  card: {
-    minWidth: 100,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 4px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-    marginRight: 55,
-    marginLeft: 55
-  },
-};
 
 function SimpleCard(props) {
   const { classes } = props;
@@ -58,5 +41,5 @@ SimpleCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SimpleCard);
+export default withStyles(Styles)(SimpleCard);
 

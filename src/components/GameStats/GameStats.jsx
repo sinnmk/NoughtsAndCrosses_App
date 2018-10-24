@@ -1,25 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Typography, TableCell, TableRow, TableBody, Table, Card, CardContent, withStyles } from '@material-ui/core';
+import Styles from './Styles';
 
-const styles = {
-  card: {
-    minWidth: 100,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 4px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-    marginRight: 55,
-    marginLeft: 55
-  },
-};
 
 class GameStats extends Component {
 
@@ -67,4 +50,4 @@ GameStats.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(GameStats);
+export default withStyles(Styles)(GameStats);

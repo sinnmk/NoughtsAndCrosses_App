@@ -1,26 +1,8 @@
 import React, { Component } from 'react';
 import { Col, Form, FormGroup, Label, Input} from 'reactstrap';
 import { Button, Card, CardContent, Typography, withStyles } from '@material-ui/core';
-import PropTypes from 'prop-types'
-
-const styles = {
-  card: {
-    minWidth: 100,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 4px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-    marginRight: 55,
-    marginLeft: 55
-  },
-};
+import PropTypes from 'prop-types';
+import Styles from './Styles';
 
 class SignUp extends Component {
     constructor(props) {
@@ -36,7 +18,7 @@ class SignUp extends Component {
         }
     }
 
-    render(props) {
+    render() {
         return (
             <Card className='sign-up'>
                 <CardContent>
@@ -73,7 +55,7 @@ class SignUp extends Component {
                         </FormGroup>
                     </Form>
                 </CardContent>
-                <Button color="secondary" >Register</Button>
+                <Button color="secondary" onClick={this.register}>Register</Button>
             </Card>
         )
     }
@@ -82,4 +64,4 @@ SignUp.propTypes ={
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SignUp);
+export default withStyles(Styles)(SignUp);

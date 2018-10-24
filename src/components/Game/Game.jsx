@@ -1,18 +1,9 @@
 import React, { Component } from 'react';
 import {FormControl, Radio, Button, FormLabel, RadioGroup, withStyles, FormControlLabel} from '@material-ui/core';
 import PropTypes from 'prop-types';
+import $ from 'jquery';
+import Styles from './Styles';
 
-const styles = theme => ({
-    root: {
-        display: 'flex',
-    },
-    formControl: {
-        margin: theme.spacing.unit * 3,
-    },
-    group: {
-        margin: `${theme.spacing.unit}px 0`,
-    },
-});
 
 class Game extends Component {
 
@@ -25,6 +16,20 @@ class Game extends Component {
                 boardsize: null} 
             ]
         }
+    }
+
+    handleGameSetupSubmit(){
+        $.ajax({
+            dataType: 'json',
+            type: 'POST',
+            data: this.state,
+            success: function(data){
+                this.setState({data:data});
+            }.bind(this),
+            error: function(xhr, status, err){
+                console.error(this.props.url, status, err.toString());
+            }.bind(this) 
+        });
     }
 
     createGame(){
@@ -93,9 +98,9 @@ class Game extends Component {
                                 className={classes.group} 
                                 value={this.state.gamelevel} 
                                 onChange={this.handleLevelChoice}>
-                        <FormControlLabel value="easy-level" control={<Radio />} label="Easy"/>
-                        <FormControlLabel value="medium-level" control={<Radio />} label="Intermediate"/>
-                        <FormControlLabel value="hard-level" control={<Radio />} label="Difficult"/>
+                        <FormControlLabel value="easy" control={<Radio />} label="Easy"/>
+                        <FormControlLabel value="intermediate" control={<Radio />} label="Intermediate"/>
+                        <FormControlLabel value="difficult" control={<Radio />} label="Difficult"/>
                     </RadioGroup>
                 </FormControl>
                 <div>
@@ -109,4 +114,4 @@ class Game extends Component {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Game);
+export default withStyles(Styles)(Game);

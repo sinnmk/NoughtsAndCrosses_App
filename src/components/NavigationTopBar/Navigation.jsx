@@ -6,11 +6,8 @@ import SignUp from '../SignUp/SignUp';
 import Rules from '../GameRules/GameRules';
 import PropTypes from 'prop-types';
 import { withStyles, AppBar, Tabs, Tab, Typography } from '@material-ui/core'
-import AccountIcon from '@material-ui/icons/AccountCircle';
-import HelpIcon from '@material-ui/icons/Help';
-import PlayCircle from '@material-ui/icons/PlayCircleFilled';
-import GroupAdd from '@material-ui/icons/GroupAdd';
-import AssessmentIcon from '@material-ui/icons/Assessment';
+import {AccountCircle, Help, PlayCircleFilled, GroupAdd, Assessment} from '@material-ui/icons';
+import Styles from './Styles';
 
 function TabContainer(props) {
     return (
@@ -24,12 +21,6 @@ TabContainer.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
-const styles = theme => ({
-    root: {
-        flexGrow: 1,
-        backgroundColor: theme.palette.background.paper,
-    },
-});
 
 class NavigationTopBar extends Component {
     state = {
@@ -48,10 +39,10 @@ class NavigationTopBar extends Component {
             <div className={classes.root}>
                 <AppBar position="static" color="default">
                     <Tabs value={value} onChange={this.handleChange} centered>
-                        <Tab label="Play Game" icon={ <PlayCircle/> } />
-                        <Tab label="Rules" icon={ <HelpIcon/> } />
-                        <Tab label="Stats" icon={ <AssessmentIcon/> } />
-                        <Tab label="Log In" icon={ <AccountIcon/> } />
+                        <Tab label="Play Game" icon={ <PlayCircleFilled/> } />
+                        <Tab label="Rules" icon={ <Help/> } />
+                        <Tab label="Stats" icon={ <Assessment/> } />
+                        <Tab label="Log In" icon={ <AccountCircle/> } />
                         <Tab label="Register" icon={ <GroupAdd/> } />
                     </Tabs>
                 </AppBar>
@@ -69,4 +60,4 @@ NavigationTopBar.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(NavigationTopBar);
+export default withStyles(Styles)(NavigationTopBar);
