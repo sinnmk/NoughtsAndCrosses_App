@@ -1,5 +1,4 @@
-const styles = {
-
+const styles = theme => ({
   card: {
     minWidth: 100,
   },
@@ -11,11 +10,15 @@ const styles = {
   title: {
     fontSize: 14,
   },
+  group: {
+      margin: `${theme.spacing.unit}px 0`,
+  },
   pos: {
     marginBottom: 12,
     marginRight: 55,
     marginLeft: 55,
     display: "flex", 
   },
-};
+});
+
 export default styles;

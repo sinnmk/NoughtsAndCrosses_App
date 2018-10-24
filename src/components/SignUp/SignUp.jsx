@@ -18,6 +18,10 @@ class SignUp extends Component {
         }
     }
 
+    handleButtonClick(){
+        return(console.log(this.state))
+    }
+
     render() {
         return (
             <Card style={{flex:1}} align-items='flex-start'>
@@ -55,7 +59,7 @@ class SignUp extends Component {
                         </FormGroup>
                     </Form>
                 </CardContent>
-                <Button color="secondary" onClick={this.register}>Register</Button>
+                <Button color="secondary" onClick={this.handleButtonClick()}>Register</Button>
             </Card>
         )
     }
