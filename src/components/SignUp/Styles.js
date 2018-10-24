@@ -1,4 +1,5 @@
 const styles = {
+
   card: {
     minWidth: 100,
   },
@@ -13,7 +14,8 @@ const styles = {
   pos: {
     marginBottom: 12,
     marginRight: 55,
-    marginLeft: 55
+    marginLeft: 55,
+    display: "flex", 
   },
 };
 export default styles;
