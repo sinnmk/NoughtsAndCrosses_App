@@ -19,17 +19,18 @@ class Game extends Component {
     constructor(props){
         super(props)
         this.state= {
-            gamelevel: "",
-            turnchoice: "",
-            boardsize:"" 
+            data: [
+                {gamelevel: null,
+                turnchoice: null,
+                boardsize: null} 
+            ]
         }
     }
 
-    createGame(game){
-        const formData = new FormData();
-        formData.append('boardsize', game.boardsize)
-        formData.append('turnchoice', game.turnchoice)
-        formData.append('gamelevel', game.gamelevel)
+    createGame(){
+        return (
+            console.log(this.state)
+            ); 
     }
 
     handleTurnChoice = event => {
@@ -98,7 +99,7 @@ class Game extends Component {
                     </RadioGroup>
                 </FormControl>
                 <div>
-                    <Button size="small" variant="contained" color="secondary">Play</Button>
+                    <Button onClick={()=> {this.createGame()}} size="small" variant="contained" color="secondary">Play</Button>
                 </div>
             </div>
         )

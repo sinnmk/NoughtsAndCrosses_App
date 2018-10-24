@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Col, Form, FormGroup, Label, Input} from 'reactstrap';
-import { Card, CardContent, Typography, withStyles } from '@material-ui/core';
+import { Button, Card, CardContent, Typography, withStyles } from '@material-ui/core';
 import PropTypes from 'prop-types'
 
 const styles = {
@@ -26,6 +26,13 @@ class SignUp extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            data:[{
+                userId: null,
+                emailAddress: "",
+                password: "",
+                firstName: "",
+                lastName: "",
+            }]
         }
     }
 
@@ -37,7 +44,7 @@ class SignUp extends Component {
                     Noughts+Crosses
                     </Typography>
                     <Typography variant="h5" component="h2">
-                    Sign Up
+                    Welcome
                     </Typography>
                     <Form>
                         <FormGroup row>
@@ -66,6 +73,7 @@ class SignUp extends Component {
                         </FormGroup>
                     </Form>
                 </CardContent>
+                <Button color="secondary" >Register</Button>
             </Card>
         )
     }

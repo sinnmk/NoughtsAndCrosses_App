@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 import {Typography, Paper, InputLabel, Input, Checkbox, FormControl, FormControlLabel, CssBaseline, Button, Avatar} from '@material-ui/core'
 import AccountIcon from '@material-ui/icons/AccountCircle';
+import pink from '@material-ui/core/colors/pink';
+
 
 const styles = theme => ({
   layout: {
@@ -25,7 +27,7 @@ const styles = theme => ({
   },
   avatar: {
     margin: theme.spacing.unit,
-    backgroundColor: '#808080',
+    backgroundColor: pink,
   },
   form: {
     width: '100%', // Fix IE11 issue.
@@ -35,7 +37,6 @@ const styles = theme => ({
     marginTop: theme.spacing.unit * 3,
   },
 });
-
 function SignIn(props) {
   const { classes } = props;
 
@@ -44,7 +45,7 @@ function SignIn(props) {
       <CssBaseline />
       <main className={classes.layout}>
         <Paper className={classes.paper}>
-          <Avatar className={classes.avatar}>
+          <Avatar className={classes.avatar} color='secondary'>
             <AccountIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -65,14 +66,14 @@ function SignIn(props) {
               />
             </FormControl>
             <FormControlLabel
-              control={<Checkbox value="remember" color="#808080" />}
+              control={<Checkbox value="remember" color="secondary" />}
               label="Remember me"
             />
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              color="#808080"
+              color="secondary"
               className={classes.submit}
             >
               Sign in

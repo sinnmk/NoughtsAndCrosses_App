@@ -1,14 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
+import { Typography, TableCell, TableRow, TableBody, Table, Card, CardContent, withStyles } from '@material-ui/core';
 
 const styles = {
   card: {
@@ -29,38 +21,50 @@ const styles = {
   },
 };
 
-function SimpleCard(props) {
-  const { classes } = props;
+class GameStats extends Component {
 
-  return (
-    <Card className={classes.card}>
-      <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-        Noughts+Crosses
+  constructor(props) {
+    super(props)
+    this.state = {
+      data:
+      [
+        {
+        name: "",
+        moves: [],
+        score: 0,
+        }
+      ]
+    };
+  }
+
+  render() {
+    return (
+      <Card className='game-stats'>
+        <CardContent>
+          <Typography className='game-stats' color="textSecondary" gutterBottom>
+            Noughts+Crosses
         </Typography>
-        <Typography variant="h5" component="h7">
-        Stats
+          <Typography variant="h5" component="h2">
+            Stats
         </Typography>
-        <Typography component="p">
-        <TableHead>
-          <TableRow>
-            <TableCell numeric>Game#</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell numeric>Moves</TableCell>
-            <TableCell numeric>Time</TableCell>
-          </TableRow>
-        </TableHead>
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button id="card-back-button" size="small">Back</Button>
-      </CardActions>
-    </Card>
-  );
+          <Table>
+            <TableBody>
+              <TableRow>
+                <TableCell numeric>Game#</TableCell>
+                <TableCell>Name</TableCell>
+                <TableCell numeric>Moves</TableCell>
+                <TableCell numeric>Time</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </CardContent>
+      </Card>
+    );
+  }
 }
 
-SimpleCard.propTypes = {
+GameStats.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SimpleCard);
+export default withStyles(styles)(GameStats);
