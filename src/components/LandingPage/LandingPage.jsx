@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NavigationTopBar from '../NavigationTopBar/Navigation';
-import './LandingPage.css';
+import { withStyles } from '@material-ui/core'
+import Styles from './Styles';
 
 class LandingPage extends Component {
 
@@ -15,4 +16,4 @@ class LandingPage extends Component {
     )
   }
 }
-export default LandingPage;
+export default withStyles(Styles)(LandingPage);

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Typography, TableCell, TableRow, TableBody, Table, Card, CardContent, withStyles } from '@material-ui/core';
+import { Typography, TableCell, TableRow, 
+TableBody, Table, Card, CardContent, 
+withStyles } from '@material-ui/core';
 import Styles from './Styles';
-
 
 class GameStats extends Component {
 

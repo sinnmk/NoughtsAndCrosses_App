@@ -3,7 +3,7 @@ import {FormControl, Radio, Button, FormLabel, RadioGroup, withStyles, FormContr
 import PropTypes from 'prop-types';
 import $ from 'jquery';
 import Styles from './Styles';
-
+import Board from '../Board/Board';
 
 class Game extends Component {
 
@@ -34,7 +34,8 @@ class Game extends Component {
 
     createGame(){
         return (
-            console.log(this.state)
+            // console.log(this.state)
+            <Board/>
             ); 
     }
 
@@ -67,6 +68,7 @@ class Game extends Component {
 
         return(
             <div className={classes.root}>
+            <Board/>
                 <FormControl component="fieldset" className = {classes.formControl}>
                     <FormLabel component="legend">Board Size</FormLabel>
                     <RadioGroup aria-label="board-size" 
