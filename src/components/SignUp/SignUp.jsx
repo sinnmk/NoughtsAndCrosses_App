@@ -8,13 +8,13 @@ class SignUp extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: [{
-                userId: null,
+            data: [
+                {userId: null,
                 emailAddress: "",
                 password: "",
                 firstName: "",
-                lastName: "",
-            }]
+                lastName: ""}
+            ]
         }
     }
 

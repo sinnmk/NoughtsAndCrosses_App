@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Game from '../Game/Game';
 import SignIn from '../SignIn/SignIn';
+import GameSetup from '../GameSetup/GameSetup';
 import Stats from '../GameStats/GameStats';
 import SignUp from '../SignUp/SignUp';
 import Rules from '../GameRules/GameRules';
@@ -39,6 +40,7 @@ class NavigationTopBar extends Component {
             <div className={classes.root}>
                 <AppBar position="static" color="default">
                     <Tabs value={value} onChange={this.handleChange} centered>
+                        <Tab label="Game Setup" />
                         <Tab label="Play Game" icon={ <PlayCircleFilled/> } />
                         <Tab label="Rules" icon={ <Help/> } />
                         <Tab label="Stats" icon={ <Assessment/> } />
@@ -46,11 +48,12 @@ class NavigationTopBar extends Component {
                         <Tab label="Register" icon={ <GroupAdd/> } />
                     </Tabs>
                 </AppBar>
-                {value === 0 && <TabContainer><Game/></TabContainer>}
-                {value === 1 && <TabContainer><Rules/></TabContainer>}
-                {value === 2 && <TabContainer><Stats/></TabContainer>}
-                {value === 3 && <TabContainer><SignIn/></TabContainer>}
-                {value === 4 && <TabContainer><SignUp/></TabContainer>}
+                {value === 0 && <TabContainer><GameSetup/></TabContainer>}
+                {value === 1 && <TabContainer><Game/></TabContainer>}
+                {value === 2 && <TabContainer><Rules/></TabContainer>}
+                {value === 3 && <TabContainer><Stats/></TabContainer>}
+                {value === 4 && <TabContainer><SignIn/></TabContainer>}
+                {value === 5 && <TabContainer><SignUp/></TabContainer>}
             </div>
         );
     }

@@ -16,18 +16,18 @@ function SimpleCard(props) {
     <Card className={classes.card}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-        Noughts+Crosses
+          Noughts+Crosses
         </Typography>
         <Typography variant="h5" component="h2">
           Game Rules
         </Typography>
         <Typography component="p">
-        The rules for playing noughts and crosses are very simple. 
-        Each player takes it in turn to place their X or O into one 
-        of the empty squares in the grid by clicking on it. 
-        To win the game get three of your symbols in a 
-        line horizontally, vertically or diagonally. 
-        For the first game, X begins.
+          The rules for playing noughts and crosses are very simple.
+          Each player takes it in turn to place their X or O into one
+          of the empty squares in the grid by clicking on it.
+          To win the game get three of your symbols in a
+          line horizontally, vertically or diagonally.
+          For the first game, X begins.
         </Typography>
       </CardContent>
       <CardActions>
