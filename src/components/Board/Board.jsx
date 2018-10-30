@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Paper, Grid, Button, withStyles} from '@material-ui/core';
 import Styles from './Styles';
 import PropTypes from 'prop-types';
+import Axios from 'axios';
 
 class Board extends Component {
 
@@ -13,10 +14,17 @@ class Board extends Component {
         super(props);
         this.props = props;
         this.state = {
-            disabled: true,
-            label: "O"
+            Data:[] 
         }
         this.enableEdit = this.enableEdit.bind(this);
+    }
+
+    componentDidMount(){
+        Axios.get("http://localhost:3000/board").then(response => {
+            this.setState({
+                Data = response.data
+            });
+        })
     }
 
     enableEdit(){

@@ -7,7 +7,7 @@ import SignUp from '../SignUp/SignUp';
 import Rules from '../GameRules/GameRules';
 import PropTypes from 'prop-types';
 import { withStyles, AppBar, Tabs, Tab, Typography } from '@material-ui/core'
-import {AccountCircle, Help, PlayCircleFilled, GroupAdd, Assessment} from '@material-ui/icons';
+import {AccountCircle, Help, PlayCircleFilled, GroupAdd, Assessment, Settings} from '@material-ui/icons';
 import Styles from './Styles';
 
 function TabContainer(props) {
@@ -40,7 +40,7 @@ class NavigationTopBar extends Component {
             <div className={classes.root}>
                 <AppBar position="static" color="default">
                     <Tabs value={value} onChange={this.handleChange} centered>
-                        <Tab label="Game Setup" />
+                        <Tab label="Game Setup" icon={<Settings/>}/>
                         <Tab label="Play Game" icon={ <PlayCircleFilled/> } />
                         <Tab label="Rules" icon={ <Help/> } />
                         <Tab label="Stats" icon={ <Assessment/> } />

@@ -50,6 +50,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "babel-jest": "^23.6.0",
     "webpack": "^4.21.0"
   }
 }
