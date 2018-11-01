@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Paper, Grid, Button, withStyles} from '@material-ui/core';
-import Styles from './Styles';
+import Styles from './BoardStyles';
 import PropTypes from 'prop-types';
-import Axios from 'axios';
+import axios from 'axios';
 
 class Board extends Component {
 
@@ -14,24 +14,29 @@ class Board extends Component {
         super(props);
         this.props = props;
         this.state = {
-            Data:[] 
-        }
-        this.enableEdit = this.enableEdit.bind(this);
+            boardData: []       
+        };
     }
-
-    componentDidMount(){
-        Axios.get("http://localhost:3000/board").then(response => {
-            this.setState({
-                Data = response.data
-            });
-        })
-    }
-
     enableEdit(){
         this.setState({
             disabled: !this.state.disabled,
             label: "X"
         })
+    }
+
+    componentDidMount(){
+        axios.get("http://localhost:9000/board").then(response => {
+            console.log(response.data);
+            this.setState({
+                boardData: response.data
+            })
+        })
+    }
+
+    render(){
+        return (
+           <div>{this.state.boardData}</div> 
+        )
     }
 
     renderRow(){
@@ -56,16 +61,16 @@ class Board extends Component {
             </Grid>
         )
     }
-
-    render(){
-        const {classes} = this.props;
-        return (
-            <div className={classes.root}>
-                {this.renderRow()}
-                {this.renderRow()}
-                {this.renderRow()}
-            </div>
-        )
-    }
+    // render(){
+    //     return this.CreateBoard()
+        // const {classes} = this.props;
+        // return (
+        //     <div className={classes.root}>
+        //         {this.renderRow()}
+        //         {this.renderRow()}
+        //         {this.renderRow()}
+        //     </div>
+        // )
+    // }
 }
 export default withStyles(Styles)(Board);

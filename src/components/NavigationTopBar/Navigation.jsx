@@ -8,7 +8,7 @@ import Rules from '../GameRules/GameRules';
 import PropTypes from 'prop-types';
 import { withStyles, AppBar, Tabs, Tab, Typography } from '@material-ui/core'
 import {AccountCircle, Help, PlayCircleFilled, GroupAdd, Assessment, Settings} from '@material-ui/icons';
-import Styles from './Styles';
+import Styles from './NavigationStyles';
 
 function TabContainer(props) {
     return (

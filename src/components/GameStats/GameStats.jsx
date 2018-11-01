@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Typography, TableCell, TableRow, 
 TableBody, Table, Card, CardContent, 
 withStyles } from '@material-ui/core';
-import Styles from './Styles';
+import Styles from './GameStatsStyles';
 
 class GameStats extends Component {
 

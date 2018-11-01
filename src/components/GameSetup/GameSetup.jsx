@@ -1,7 +1,7 @@
 import { Card, CardContent, FormControl, FormLabel, Radio, RadioGroup, FormControlLabel, Button, withStyles } from "@material-ui/core";
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
-import Styles from './Styles';
+import Styles from './GameSetupStyles';
 
 class GameSetup extends Component{
     constructor(props){

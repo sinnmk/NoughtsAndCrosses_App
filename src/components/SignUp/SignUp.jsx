@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Col, Form, FormGroup, Label, Input } from 'reactstrap';
 import { Button, Card, CardContent, Typography, withStyles } from '@material-ui/core';
 import PropTypes from 'prop-types';
-import Styles from './Styles';
+import Styles from './SignUpStyles';
 
 class SignUp extends Component {
     constructor(props) {
