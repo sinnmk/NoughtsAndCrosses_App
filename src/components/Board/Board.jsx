@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Paper, Grid, Button, withStyles} from '@material-ui/core';
 import Styles from './BoardStyles';
 import PropTypes from 'prop-types';
-import axios from 'axios';
+import $ from 'jquery';
 
 class Board extends Component {
 
@@ -13,64 +13,71 @@ class Board extends Component {
     constructor(props){
         super(props);
         this.props = props;
-        this.state = {
-            boardData: []       
-        };
-    }
-    enableEdit(){
-        this.setState({
-            disabled: !this.state.disabled,
-            label: "X"
-        })
+        this.state = 
+            {isToggleOn: true};
+            //not sure if this is what I want
+            // BoardDimension: null,
+            // IsTerminal: false,
+            // BoardState: false
+        this.handleClick = this.handleClick.bind(this);
+    };
+
+    renderBoard(){
+
     }
 
-    componentDidMount(){
-        axios.get("http://localhost:9000/board").then(response => {
-            console.log(response.data);
-            this.setState({
-                boardData: response.data
-            })
-        })
+    componentWillReceiveProps(){
+        if(this.props.boardState !== nextProps.boardState){
+            this.renderBoard(nextProps.boardState);
+        }
+    }
+
+    initialBoardState(BoardDimension){
+        var boardState = []
+        for (var i = 0; i < BoardDimension*BoardDimension; i++){
+            boardState.append("");
+        }
+        return boardState;
+    }
+
+    handleClick(){
+        this.setState(state => ({
+            isToggleOn: !state.isToggleOn
+        }))
     }
 
     render(){
         return (
-           <div>{this.state.boardData}</div> 
-        )
-    }
+        <table>
+            <tr>
+                <td><button onclick={this.handleClick}>{this.state.isToggleOn ? 'X' : 'O'}</button></td>
+                <td><button onclick={this.handleClick}>{this.state.isToggleOn ? 'X' : 'O'}</button></td>
+                <td><button onclick={this.handleClick}>{this.state.isToggleOn ? 'X' : 'O'}</button></td>
+            </tr>
+            <tr>
+                <td><button onclick={this.handleClick}>{this.state.isToggleOn ? 'X' : 'O'}</button></td>
+                <td><button onclick={this.handleClick}>{this.state.isToggleOn ? 'X' : 'O'}</button></td>
+                <td><button onclick={this.handleClick}>{this.state.isToggleOn ? 'X' : 'O'}</button></td>
+            </tr>
+            <tr>
+                <td><button onclick={this.handleClick}>{this.state.isToggleOn ? 'X' : 'O'}</button></td>
+                <td><button onclick={this.handleClick}>{this.state.isToggleOn ? 'X' : 'O'}</button></td>
+                <td><button onclick={this.handleClick}>{this.state.isToggleOn ? 'X' : 'O'}</button></td>
+            </tr>
+        </table>
+        )}
 
-    renderRow(){
-        const {classes} = this.props;
-        return (
-            <Grid container spacing ={1}>
-                <Grid item xs={1} align-content-xs-center>
-                    <Paper className={classes.paper}> 
-                        <Button onClick={this.enableEdit} label={this.state.label}primary={true}> </Button>
-                    </Paper>
-                </Grid>
-                <Grid item xs={1} align-content-xs-center>
-                    <Paper className={classes.paper}> 
-                        <Button onClick={this.enableEdit} label={this.state.label}primary={true}> </Button>
-                    </Paper>
-                </Grid>
-                <Grid item xs={1} align-content-xs-center>
-                    <Paper className={classes.paper}> 
-                        <Button onClick={this.enableEdit} label={this.state.label}primary={true}> </Button>
-                    </Paper>
-                </Grid>
-            </Grid>
-        )
+    createBoard(){
+        return $.ajax({
+            method: "POST", 
+            url: 'http://localhost:9000/board',
+            data: JSON.stringify(this.state),
+            contentType: "application/json"
+        }).done(function(data){
+            console.log('success', data)
+        }).fail(function(xhr){
+            console.log('error', xhr)
+        });
     }
-    // render(){
-    //     return this.CreateBoard()
-        // const {classes} = this.props;
-        // return (
-        //     <div className={classes.root}>
-        //         {this.renderRow()}
-        //         {this.renderRow()}
-        //         {this.renderRow()}
-        //     </div>
-        // )
-    // }
 }
 export default withStyles(Styles)(Board);
