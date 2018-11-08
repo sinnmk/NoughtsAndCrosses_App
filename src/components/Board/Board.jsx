@@ -1,71 +1,92 @@
 import React, {Component} from 'react';
-import {Paper, Grid, Button, withStyles} from '@material-ui/core';
-import Styles from './BoardStyles';
-import PropTypes from 'prop-types';
 import $ from 'jquery';
 
 class Board extends Component {
 
-    static propTypes = {
-        name: PropTypes.string,
-    }
-
     constructor(props){
         super(props);
         this.props = props;
-        this.state = 
-            {isToggleOn: true};
-            //not sure if this is what I want
-            // BoardDimension: null,
-            // IsTerminal: false,
-            // BoardState: false
-        this.handleClick = this.handleClick.bind(this);
-    };
-
-    renderBoard(){
-
-    }
-
-    componentWillReceiveProps(){
-        if(this.props.boardState !== nextProps.boardState){
-            this.renderBoard(nextProps.boardState);
+        this.state = {
+            BoardState: [],
+            IsTerminal: false
         }
     }
 
-    initialBoardState(BoardDimension){
-        var boardState = []
-        for (var i = 0; i < BoardDimension*BoardDimension; i++){
-            boardState.append("");
-        }
-        return boardState;
-    }
-
-    handleClick(){
-        this.setState(state => ({
-            isToggleOn: !state.isToggleOn
-        }))
-    }
+    // renderBoardRows(BoardDimension){
+    //     var board = $("#boardRows")
+    //     var boardRow = '';
+    //     for(var i = 0; i < BoardDimension; i++){
+    //         result += [
+    //                 <tr>
+    //                     <td width="100">
+    //                         <button width="100">
+    //                         </button>
+    //                     </td>
+    //                     <td width="100">
+    //                         <button>
+    //                         </button>
+    //                     </td>
+    //                     <td width="100">
+    //                         <button>
+    //                         </button>
+    //                     </td>
+    //                 </tr>
+    //         ].join("\n");
+    //     }
+    //     board.html(boardRow);
+    //     return false;
+    // }
 
     render(){
         return (
-        <table>
-            <tr>
-                <td><button onclick={this.handleClick}>{this.state.isToggleOn ? 'X' : 'O'}</button></td>
-                <td><button onclick={this.handleClick}>{this.state.isToggleOn ? 'X' : 'O'}</button></td>
-                <td><button onclick={this.handleClick}>{this.state.isToggleOn ? 'X' : 'O'}</button></td>
-            </tr>
-            <tr>
-                <td><button onclick={this.handleClick}>{this.state.isToggleOn ? 'X' : 'O'}</button></td>
-                <td><button onclick={this.handleClick}>{this.state.isToggleOn ? 'X' : 'O'}</button></td>
-                <td><button onclick={this.handleClick}>{this.state.isToggleOn ? 'X' : 'O'}</button></td>
-            </tr>
-            <tr>
-                <td><button onclick={this.handleClick}>{this.state.isToggleOn ? 'X' : 'O'}</button></td>
-                <td><button onclick={this.handleClick}>{this.state.isToggleOn ? 'X' : 'O'}</button></td>
-                <td><button onclick={this.handleClick}>{this.state.isToggleOn ? 'X' : 'O'}</button></td>
-            </tr>
-        </table>
-        )}
+            <table>
+                <tbody>
+                    <tr>
+                        <td width="100">
+                            <button width="100">
+                            </button>
+                        </td>
+                        <td width="100">
+                            <button>
+                            </button>
+                        </td>
+                        <td width="100">
+                            <button>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="100">
+                            <button>
+                            </button>
+                        </td>
+                        <td width="100">
+                            <button>
+                            </button>
+                        </td>
+                        <td width="100">
+                            <button>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="100">
+                            <button>
+                            </button>
+                        </td>
+                        <td width="100">
+                            <button>
+                            </button>
+                        </td>
+                        <td width="100">
+                            <button>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        )
+    }
 
     createBoard(){
         return $.ajax({
@@ -80,4 +101,4 @@ class Board extends Component {
         });
     }
 }
-export default withStyles(Styles)(Board);
+export default Board;

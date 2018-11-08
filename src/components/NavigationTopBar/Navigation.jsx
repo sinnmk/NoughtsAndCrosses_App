@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import SignIn from '../SignIn/SignIn';
-import Game from '../Game/Game';
-import SignUp from '../SignUp/SignUp';
-import Rules from '../GameRules/GameRules';
 import PropTypes from 'prop-types';
 import { withStyles, AppBar, Tabs, Tab, Typography } from '@material-ui/core'
-import {AccountCircle, Help, GroupAdd, Assessment, Settings} from '@material-ui/icons';
+import {Settings} from '@material-ui/icons';
 import Styles from './NavigationStyles';
 
 function TabContainer(props) {
@@ -39,15 +35,15 @@ class NavigationTopBar extends Component {
                 <AppBar position="static" color="default">
                     <Tabs value={value} onChange={this.handleChange} centered>
                         <Tab label="Game Setup" icon={<Settings/>}/>
-                        <Tab label="Rules" icon={ <Help/> } />
+                        {/* <Tab label="Rules" icon={ <Help/> } />
                         <Tab label="Log In" icon={ <AccountCircle/> } />
-                        <Tab label="Register" icon={ <GroupAdd/> } />
+                        <Tab label="Register" icon={ <GroupAdd/> } /> */}
                     </Tabs>
                 </AppBar>
                 {value === 0 && <TabContainer><Game/></TabContainer>}
-                {value === 1 && <TabContainer><Rules/></TabContainer>}
+                {/* {value === 1 && <TabContainer><Rules/></TabContainer>}
                 {value === 2 && <TabContainer><SignIn/></TabContainer>}
-                {value === 3 && <TabContainer><SignUp/></TabContainer>}
+                {value === 3 && <TabContainer><SignUp/></TabContainer>} */}
             </div>
         );
     }
