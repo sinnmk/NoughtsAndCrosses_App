@@ -1,104 +1,70 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { withStyles } from "@material-ui/core";
+import PropTypes from 'prop-types';
 import $ from 'jquery';
+import BoxComponent from '../Board/Square';
+import BoardStyles from '../Board/BoardStyles';
 
 class Board extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.props = props;
+        this.players = ["X", "O"];
+        this.boxes = 9;
         this.state = {
-            BoardState: [],
-            IsTerminal: false
-        }
+            turn: this.players[0],
+            grid: new Array(this.boxes).fill("")
+        };
     }
 
-    // renderBoardRows(BoardDimension){
-    //     var board = $("#boardRows")
-    //     var boardRow = '';
-    //     for(var i = 0; i < BoardDimension; i++){
-    //         result += [
-    //                 <tr>
-    //                     <td width="100">
-    //                         <button width="100">
-    //                         </button>
-    //                     </td>
-    //                     <td width="100">
-    //                         <button>
-    //                         </button>
-    //                     </td>
-    //                     <td width="100">
-    //                         <button>
-    //                         </button>
-    //                     </td>
-    //                 </tr>
-    //         ].join("\n");
-    //     }
-    //     board.html(boardRow);
-    //     return false;
-    // }
+    setMark = index => {
+        this.setState(prevState => {
+            const newGrid = [...prevState.grid];
+            newGrid[index] = prevState.turn;
+            return {
+                turn:
+                    prevState.turn === this.players[0]
+                        ? this.players[1]
+                        : this.players[0],
+                grid: newGrid
+            };
+        });
+    };
 
-    render(){
+    render() {
         return (
-            <table>
-                <tbody>
-                    <tr>
-                        <td width="100">
-                            <button width="100">
-                            </button>
-                        </td>
-                        <td width="100">
-                            <button>
-                            </button>
-                        </td>
-                        <td width="100">
-                            <button>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="100">
-                            <button>
-                            </button>
-                        </td>
-                        <td width="100">
-                            <button>
-                            </button>
-                        </td>
-                        <td width="100">
-                            <button>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="100">
-                            <button>
-                            </button>
-                        </td>
-                        <td width="100">
-                            <button>
-                            </button>
-                        </td>
-                        <td width="100">
-                            <button>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        )
+            <div className="grid">
+                {this.state.grid.map((box, index) => {
+                    return (
+                        <BoxComponent
+                            key={index}
+                            onClick={e => {
+                                this.setMark(index);
+                            }}
+                            name={box}>
+                            {box}
+                        </BoxComponent>
+                    );
+                })}
+            </div>
+        );
     }
 
-    createBoard(){
+    createBoard() {
         return $.ajax({
-            method: "POST", 
+            method: "POST",
             url: 'http://localhost:9000/board',
             data: JSON.stringify(this.state),
             contentType: "application/json"
-        }).done(function(data){
+        }).done(function (data) {
             console.log('success', data)
-        }).fail(function(xhr){
+        }).fail(function (xhr) {
             console.log('error', xhr)
         });
     }
 }
-export default Board;
+
+Board.propTypes={
+    classes: PropTypes.object.isRequired,
+};
+export default withStyles(BoardStyles)(Board);

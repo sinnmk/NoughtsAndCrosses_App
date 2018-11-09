@@ -4,7 +4,7 @@ const styles = theme => ({
         flexWrap: 'wrap',
     },
     card: {
-        minWidth: 100,
+        minWidth: 300,
     },
     formControl: {
         margin: theme.spacing.unit * 3,
