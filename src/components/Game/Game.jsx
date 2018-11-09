@@ -63,8 +63,8 @@ class Game extends Component{
 
         return(
             <div className={classes.root}>
-                <Card>
                 {this.state.ShowGameComponent ? 
+                <Card>
                     <CardContent>
                         <FormControl component="fieldset" className = {classes.formControl}>
                             <FormLabel component="legend">Board Size</FormLabel>
@@ -106,12 +106,12 @@ class Game extends Component{
                             <Button onClick={()=> {this._onButtonClick()}} size="small" variant="contained" color="secondary">Submit</Button>
                         </div>
                     </CardContent>
+                </Card>
                 :null}
                 {this.state.ShowBoardComponent ?
                     <Board/>: 
                     null
                 }
-                </Card>
         </div>
         )
     }

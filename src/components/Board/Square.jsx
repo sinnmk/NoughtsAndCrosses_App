@@ -10,10 +10,10 @@ class Square extends Component {
         const boxStyle = {
             width: "30%",
             height: "100px",
-            background: "black",
+            background: "powderblue",
             float: "left",
-            margin: "5px",
-            color: "pink",
+            margin: "8px",
+            color: "white",
             verticalAlign: "middle",
             display: "flex",
             alignItems: "center",
