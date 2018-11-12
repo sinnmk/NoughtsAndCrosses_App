@@ -1,7 +1,7 @@
 const Styles ={
     root: {
         display: 'flex',
-        flexWrap: 'wrap',
+        flexWrap: 'nowrap',
     },
     card: {
         minWidth: 300,

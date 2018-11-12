@@ -12,7 +12,7 @@ class Square extends Component {
             height: "100px",
             background: "powderblue",
             float: "left",
-            margin: "8px",
+            margin: "1px",
             color: "white",
             verticalAlign: "middle",
             display: "flex",
