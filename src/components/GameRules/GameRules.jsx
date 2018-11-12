@@ -1,19 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import { withStyles, Card, CardContent, Typography } from '@material-ui/core';
 import Styles from './GameRulesStyles';
-
 
 function SimpleCard(props) {
   const { classes } = props;
 
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} style={{maxWidth: '550px', margin: 'auto'}}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
           Noughts+Crosses
@@ -30,9 +24,6 @@ function SimpleCard(props) {
           For the first game, X begins.
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button id="card-back-button" size="small">Back</Button>
-      </CardActions>
     </Card>
   );
 }

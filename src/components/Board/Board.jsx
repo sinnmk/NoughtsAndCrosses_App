@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import $ from 'jquery';
 import BoxComponent from '../Board/Square';
 import BoardStyles from '../Board/BoardStyles';
+import {Card, CardContent} from '@material-ui/core';
 
 class Board extends Component {
 
@@ -16,6 +17,45 @@ class Board extends Component {
             BoardState: new Array(this.boxes).fill("")
             // grid: new Array(this.boxes).fill("")
         };
+    }
+
+    render() {
+        return (
+            <div className="grid" style={{maxWidth:'300px', margin:'auto'}}>
+                <Card style={{maxWidth:'150px', maxHeight: '40px', margin:"auto", textAlign:"center"}}>
+                    <CardContent>
+                        It's {this.state.Turn}'s turn
+                    </CardContent>
+                </Card>
+                {this.state.BoardState.map((box, index) => {
+                    return (
+                        <BoxComponent key={index} onClick={e => {this.handleClick(index)}} name={box}>
+                            {box}
+                        </BoxComponent>
+                    );
+                })}
+            </div>
+        );
+    }
+
+    
+
+    // initializeBoard(){
+    //     return $.ajax({
+    //         method: "POST",
+    //         url: 'http://localhost:9000/board',
+    //         data: JSON.stringify(this.convertBoardArrToString()),
+    //         contentType: "application/json"
+    //     }).done(function (data) {
+    //         console.log('success', data)
+    //     }).fail(function (xhr) {
+    //         console.log('error', xhr)
+    //     });
+    // }
+
+    convertBoardArrToString(){
+        var data = Object.assign({}, this.state.BoardState);
+        return data;
     }
     
     setMark = index => {
@@ -34,12 +74,10 @@ class Board extends Component {
 
     handleClick = index =>{
         this.setMark(index);
-        var BoardState = this.state.BoardState.toString();
-        var boardData = Object.assign({}, BoardState, this.state.Turn);
-        console.log(this.state.BoardState)
+        var boardData = Object.assign({}, this.convertBoardArrToString(), this.state.Turn);
 
         return $.ajax({
-            method: "POST",
+            method: "PUT",
             url: 'http://localhost:9000/board',
             data: JSON.stringify(boardData),
             contentType: "application/json"
@@ -48,46 +86,6 @@ class Board extends Component {
         }).fail(function (xhr) {
             console.log('error', xhr)
         });
-    }
-
-    render() {
-        return (
-            <div className="grid" style={{maxWidth:'300px'}}>
-                {this.state.BoardState.map((box, index) => {
-                    return (
-                        <BoxComponent key={index} onClick={e => {this.handleClick(index)}} name={box}>
-                            {box}
-                        </BoxComponent>
-                    );
-                })}
-            </div>
-        );
-    }
-
-    createBoard() {
-        return $.ajax({
-            method: "POST",
-            url: 'http://localhost:9000/board',
-            data: JSON.stringify(this.state),
-            contentType: "application/json"
-        }).done(function (data) {
-            console.log('success', data)
-        }).fail(function (xhr) {
-            console.log('error', xhr)
-        });
-    }
-
-    modifyBoard(){
-        return $.ajax({
-            method: "PUT",
-            url: 'http://localhost:9000/board',
-            data: JSON.stringify, 
-            contentType: "application/json"
-        }).done(function(data){
-            console.log('success', data)
-        }).fail(function(xhr){
-            console.log('error', xhr)
-        })
     }
 }
 

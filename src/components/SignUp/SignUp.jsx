@@ -24,7 +24,7 @@ class SignUp extends Component {
 
     render() {
         return (
-            <Card style={{flex:1}} align-items='flex-start'>
+            <Card style={{flex:1, maxWidth: '300px', margin: 'auto'}} align-items='flex-start'>
                 <CardContent>
                     <Typography className="sign-up" color="textSecondary" gutterBottom>
                         Noughts+Crosses

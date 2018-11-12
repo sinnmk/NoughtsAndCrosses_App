@@ -62,7 +62,7 @@ class Game extends Component{
         const {classes} = this.props;
 
         return(
-            <div className={classes.root}>
+            <div className={classes.root} style={{maxWidth:'550px', margin: 'auto'}}>
                 {this.state.ShowGameComponent ? 
                 <Card>
                     <CardContent>
@@ -103,7 +103,7 @@ class Game extends Component{
                             </RadioGroup>
                         </FormControl>
                         <div>
-                            <Button onClick={()=> {this._onButtonClick()}} size="small" variant="contained" color="secondary">Submit</Button>
+                            <Button onClick={()=> {this._onButtonClick()}} size="small" color="secondary">SUBMIT</Button>
                         </div>
                     </CardContent>
                 </Card>
