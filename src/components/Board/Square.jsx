@@ -10,7 +10,7 @@ class Square extends Component {
         const boxStyle = {
             width: "30%",
             height: "100px",
-            background: "powderblue",
+            background: "black",
             float: "left",
             margin: "1px",
             color: "white",
