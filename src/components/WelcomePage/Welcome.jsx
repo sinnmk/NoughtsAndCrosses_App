@@ -39,9 +39,9 @@ class Welcome extends Component {
             <div>
                 {this.state.ShowWelcomeComponent ?
                 <Jumbotron style={{maxWidth: '600px', margin: 'auto'}}>
-                    <h1 className="welcome-msg">Welcome, to Noughts+Crosses!</h1>
-                    <p className="game-description">A simple site to play the popular game of Noughts + Crosses (Tic Tac Toe).</p>
-                    <p className="play-button">
+                    <h1 data-id="welcome-msg">Welcome, to Noughts+Crosses!</h1>
+                    <p data-id="game-description">A simple site to play the popular game of Noughts + Crosses (Tic Tac Toe).</p>
+                    <p data-action="play-button">
                         <Button color="secondary" onClick={() => this.handleButtonClick()} className={classes.button}>
                             Play Game
                         </Button>
