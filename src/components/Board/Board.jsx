@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withStyles } from "@material-ui/core";
+import { withStyles, Button } from "@material-ui/core";
 import PropTypes from 'prop-types';
 import $ from 'jquery';
 import BoxComponent from '../Board/Square';
@@ -17,19 +17,27 @@ class Board extends Component {
         };
     }
 
+    resetGame(){
+        this.setState({
+            Turn: this.players[0],
+            BoardState: new Array(this.boxes).fill("")
+        })
+        let gameStatus = "Next player is: " + this.state.Turn
+        gameStatus
+    }
+
     render() {
         const winner = this.checkForWin()
-        let winStatus;
+        let gameStatus;
         if (winner) {
-            winStatus = "Winner is: " + winner
-        }
-        else{
-            winStatus = "Next player is " + this.state.Turn
+            gameStatus = "Winner is: " + winner
+        }else{
+            gameStatus = "Next player is: " + this.state.Turn
         }
         return (
             <div className="grid" style={{maxWidth:'300px', margin:'auto'}}>
                 <div>
-                    {winStatus}
+                    {gameStatus}
                 </div>
                 {this.state.BoardState.map((box, index) => {
                     return (
@@ -38,6 +46,9 @@ class Board extends Component {
                         </BoxComponent>
                     );
                 })}
+                <div>
+                    <Button onClick = {() =>this.resetGame()} size="small" color="secondary" >RESET</Button>
+                </div>
             </div>
         );
     }
@@ -62,7 +73,7 @@ class Board extends Component {
         }
         return null;
     }
-        
+
     convertBoardArrToString(){
         var data = Object.assign({}, this.state.BoardState);
         return data;

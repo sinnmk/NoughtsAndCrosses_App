@@ -10,7 +10,7 @@ function SimpleCard(props) {
     <Card className={classes.card} style={{maxWidth: '550px', margin: 'auto'}}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Noughts+Crosses
+          Noughts + Crosses
         </Typography>
         <Typography variant="h5" component="h2">
           Game Rules
