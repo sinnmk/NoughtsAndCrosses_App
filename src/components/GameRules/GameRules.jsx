@@ -15,7 +15,7 @@ function SimpleCard(props) {
         <Typography variant="h5" component="h2">
           Game Rules
         </Typography>
-        <Typography component="p">
+        <Typography component="p" data-id= "game-rules">
           The rules for playing noughts and crosses are very simple.
           Each player takes it in turn to place their X or O into one
           of the empty squares in the grid by clicking on it.
