@@ -22,8 +22,6 @@ class Board extends Component {
             Turn: this.players[0],
             BoardState: new Array(this.boxes).fill("")
         })
-        let gameStatus = "Next player is: " + this.state.Turn
-        gameStatus
     }
 
     render() {
