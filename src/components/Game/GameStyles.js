@@ -1,11 +1,4 @@
 const styles = theme => ({
-    root: {
-        // display: 'flex',
-        // flexWrap: 'wrap',
-    },
-    card: {
-        // minWidth: 300,
-    },
     formControl: {
         margin: theme.spacing.unit * 3,
     },

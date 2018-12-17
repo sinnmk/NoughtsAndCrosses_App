@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles, AppBar, Tabs, Tab, Typography } from '@material-ui/core'
-import { Help, Home, PlayCircleFilledRounded, AccountCircle, GroupAdd} from '@material-ui/icons';
+import { Help, PlayCircleFilledRounded, AccountCircle, GroupAdd} from '@material-ui/icons';
 import Styles from './NavigationStyles';
 import WelcomePage from '../WelcomePage/Welcome';
-import Game from '../Game/Game';
 import Rules from '../GameRules/GameRules';
 import SignIn from '../SignIn/SignIn';
 import SignUp from '../SignUp/SignUp';
@@ -42,7 +41,7 @@ class NavigationTopBar extends Component {
                         <Tab label="Game" icon={<PlayCircleFilledRounded/>}/>
                         <Tab label="Rules" icon={<Help/> }/> 
                         <Tab label="Log In" icon={ <AccountCircle/>}/>
-                        <Tab label="Register" icon={ <GroupAdd/>}/>
+                        <Tab label="Register" icon={ <GroupAdd/>}/> 
                     </Tabs>
                 </AppBar>
                 {value === 0 && <TabContainer><WelcomePage/></TabContainer>}

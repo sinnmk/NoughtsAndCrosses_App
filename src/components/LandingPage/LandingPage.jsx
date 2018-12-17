@@ -7,11 +7,9 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <div>
         <div>
           <NavigationTopBar/>
         </div>
-      </div>
     )
   }
 }

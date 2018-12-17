@@ -74,8 +74,6 @@ class Game extends Component{
                                         value={this.state.BoardDimension} 
                                         onChange={this.handleBoardDimension}>
                                 <FormControlLabel value='3' control={<Radio />} label="3x3"/>
-                                <FormControlLabel value='4' control={<Radio />} label="4x4"/>
-                                <FormControlLabel value='5' control={<Radio />} label="5x5"/>
                             </RadioGroup>
                         </FormControl>
                         <FormControl component="fieldset" className = {classes.formControl}>
@@ -86,8 +84,6 @@ class Game extends Component{
                                         value={this.state.TurnChoice} 
                                         onChange={this.handleTurnChoice}>
                                 <FormControlLabel value='1' control={<Radio />} label="X"/>
-                                <FormControlLabel value='2' control={<Radio />} label="O"/>
-                                <FormControlLabel value='3' control={<Radio />} label ="Random"/> 
                             </RadioGroup>
                         </FormControl>
                         <FormControl component="fieldset" className = {classes.formControl}>
@@ -98,8 +94,6 @@ class Game extends Component{
                                         value={this.state.GameLevel} 
                                         onChange={this.handleLevelChoice}>
                                 <FormControlLabel value='1' control={<Radio />} label="Easy"/>
-                                <FormControlLabel value='2' control={<Radio />} label="Intermediate"/>
-                                <FormControlLabel value='3' control={<Radio />} label="Difficult"/>
                             </RadioGroup>
                         </FormControl>
                         <div>
@@ -122,6 +116,3 @@ Game.propTypes = {
 };
 
 export default withStyles(GameStyles)(Game);
-
-
-    

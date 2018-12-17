@@ -57,6 +57,7 @@
   "devDependencies": {
     "babel-jest": "^23.6.0",
     "css-loader": "^1.0.1",
+    "jest": "^23.6.0",
     "webpack": "^4.21.0"
   }
 }

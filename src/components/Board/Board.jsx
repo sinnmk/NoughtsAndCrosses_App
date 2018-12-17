@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import $ from 'jquery';
 import BoxComponent from '../Board/Square';
 import BoardStyles from '../Board/BoardStyles';
-import {Card, CardContent} from '@material-ui/core';
 
 class Board extends Component {
 
@@ -15,18 +14,23 @@ class Board extends Component {
         this.state = {
             Turn: this.players[0],
             BoardState: new Array(this.boxes).fill("")
-            // grid: new Array(this.boxes).fill("")
         };
     }
 
     render() {
+        const winner = this.checkForWin()
+        let winStatus;
+        if (winner) {
+            winStatus = "Winner is: " + winner
+        }
+        else{
+            winStatus = "Next player is " + this.state.Turn
+        }
         return (
             <div className="grid" style={{maxWidth:'300px', margin:'auto'}}>
-                <Card style={{maxWidth:'150px', maxHeight: '40px', margin:"auto", textAlign:"center"}}>
-                    <CardContent>
-                        It's {this.state.Turn}'s turn
-                    </CardContent>
-                </Card>
+                <div>
+                    {winStatus}
+                </div>
                 {this.state.BoardState.map((box, index) => {
                     return (
                         <BoxComponent key={index} onClick={e => {this.handleClick(index)}} name={box}>
@@ -38,21 +42,27 @@ class Board extends Component {
         );
     }
 
-    
-
-    // initializeBoard(){
-    //     return $.ajax({
-    //         method: "POST",
-    //         url: 'http://localhost:9000/board',
-    //         data: JSON.stringify(this.convertBoardArrToString()),
-    //         contentType: "application/json"
-    //     }).done(function (data) {
-    //         console.log('success', data)
-    //     }).fail(function (xhr) {
-    //         console.log('error', xhr)
-    //     });
-    // }
-
+    checkForWin(){
+        const boardState = this.state.BoardState
+        const winCombos = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6],
+        ];
+        for (let i = 0; i < winCombos.length; i++) {
+            const [a, b, c] = winCombos[i];
+            if (boardState[a] && boardState[a] === boardState[b] && boardState[a] === boardState[c]) {
+            return boardState[a];
+            }
+        }
+        return null;
+    }
+        
     convertBoardArrToString(){
         var data = Object.assign({}, this.state.BoardState);
         return data;
