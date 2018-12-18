@@ -6,27 +6,19 @@ import adapter from 'enzyme-adapter-react-16';
 configure({adapter: new adapter()});
 
 describe("Game", () => {
-    it("can make a POST request to backend", () => {
+    xit("can make a POST request to backend", () => {
 
     });
 
-    it("can handle changing state's TurnChoice", () => {
+    xit("can handle changing state's TurnChoice", () => {
 
     });
 
-    it("can handle changing state's LevelChoice", () => {
+    xit("can handle changing state's LevelChoice", () => {
 
     });
 
-    it("can handle changing state's BoardDimension", () =>{
-
-    });
-
-    it("can show game component", () => {
-
-    });
-
-    it("can show board component when setup complete", () => {
+    xit("can handle changing state's BoardDimension", () =>{
 
     });
 });

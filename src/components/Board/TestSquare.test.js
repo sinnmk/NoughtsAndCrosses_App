@@ -3,7 +3,7 @@ import {shallow, mount, render} from 'enzyme';
 import Square from "./Square";
 
 describe("Square", () => {
-    it("can render the square component", () => {
+    xit("can render the square component", () => {
         const wrapper = mount(<Square/>)
     });
 });

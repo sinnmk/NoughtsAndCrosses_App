@@ -18,12 +18,12 @@ describe("Navigation Component", () => {
         expect(wrapper.find(<Help/>))
     }); 
 
-    it("renders welcome page when first tab clicked", () => {
+    xit("renders welcome page when first tab clicked", () => {
         const wrapper = mount(<Navigation/>)
 
     });
 
-    it("renders rules component when 2nd tab is clicked", () => {
+    xit("renders rules component when 2nd tab is clicked", () => {
         const wrapper = mount(<Navigation/>)
 
     });

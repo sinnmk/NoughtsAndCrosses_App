@@ -23,12 +23,10 @@ describe("Welcome Component", () => {
         expect(wrapper.find("[data-id='body']").find("[data-id='welcome']").find("[data-action='play-button']").text()).toContain("Play Game")
     });
 
-    xit("shows game component upon clicking of play game button", () => {
-        const onButtonClick = sinon.spy()
-        const wrapper = mount((
-            <Button onClick={onButtonClick}/>
-        ))
-        wrapper.find('play-button').simulate('click');
-        expect(onButtonClick).toHaveProperty(ShowGameComponent)
+    it("shows game component upon clicking of play game button", () => {
+        const wrapper = mount(<Welcome/>)
+        const spy = jasmine.createSpy("handleButtonClick")
+        wrapper.find("[data-id='body']").find("[data-id='welcome']").find("[data-action='play-button']").simulate('click')
+        expect(spy).toHaveBeenCalled()
     });
 });

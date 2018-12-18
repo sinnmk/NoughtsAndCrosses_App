@@ -21,7 +21,7 @@ class Board extends Component {
         this.setState({
             Turn: this.players[0],
             BoardState: new Array(this.boxes).fill("")
-        })
+        });
     }
 
     turnsEmpty(){
