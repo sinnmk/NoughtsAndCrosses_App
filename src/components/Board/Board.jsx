@@ -24,11 +24,22 @@ class Board extends Component {
         })
     }
 
+    turnsEmpty(){
+        for (let i = 0; i < this.state.BoardState.length; i++){
+            if (this.state.BoardState[i] === ""){
+                return false
+            }
+        }
+        return true;
+    }
+
     render() {
         const winner = this.checkForWin()
         let gameStatus;
         if (winner) {
             gameStatus = "Winner is: " + winner
+        }else if (this.turnsEmpty() === true){
+            gameStatus = "It's a draw!"
         }else{
             gameStatus = "Next player is: " + this.state.Turn
         }
