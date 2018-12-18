@@ -17,11 +17,6 @@ describe("Welcome Component", () => {
         expect(wrapper.find("[data-id='game-description']").text()).toContain("A simple site to play the popular game of Noughts + Crosses (Tic Tac Toe).")
     });
 
-    xit("shows a 'play game' button welcome component", () => {
-        const wrapper = mount(<Welcome/>);
-        expect(wrapper.find("[data-id='play-game']").text()).toContain("Play Game");
-    });
-
     xit("shows game component upon clicking of play game button", () => {
         const clickCallBack = sinon.spy();
         const wrapper = mount(<Welcome />);
