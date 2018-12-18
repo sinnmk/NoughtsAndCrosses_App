@@ -41,9 +41,9 @@ class Welcome extends Component {
                 <Jumbotron style={{maxWidth: '600px', margin: 'auto'}}>
                     <h1 data-id="welcome-msg">Welcome, to Noughts+Crosses!</h1>
                     <p data-id="game-description">A simple site to play the popular game of Noughts + Crosses (Tic Tac Toe).</p>
-                    <Button data-action="play-game" color="secondary" onClick={() => this.handleButtonClick()} className={classes.button}>
+                    <div data-action="play-game" color="secondary" onClick={() => this.handleButtonClick()} className={classes.button}>
                         Play Game
-                    </Button>
+                    </div>
                 </Jumbotron>
                 :null}
                 {this.state.ShowGameComponent ? 

@@ -1,8 +1,9 @@
 import React from 'react';
 import {mount, configure} from 'enzyme'; 
 import Welcome from './Welcome';
+import Game from '../Game/Game';
 import adapter from 'enzyme-adapter-react-16';
-import sinon from 'sinon'
+import sinon from 'sinon';
 
 configure ({adapter: new adapter()});
 
@@ -18,9 +19,10 @@ describe("Welcome Component", () => {
     });
 
     xit("shows game component upon clicking of play game button", () => {
-        const clickCallBack = sinon.spy();
         const wrapper = mount(<Welcome />);
-        wrapper.find('[data-id="play-game"]').simulate('click');
-        sinon.assert.called(clickCallBack);
+        const spy = sinon.spy()
+        spy(<Game/>)
+        wrapper.find('[data-action="play-game"]').simulate('click');
+        expect(wrapper.find(<Game/>))
     });
 });
