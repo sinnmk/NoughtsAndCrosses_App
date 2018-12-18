@@ -1,32 +1,36 @@
 import React from 'react';
-import {shallow, mount, render} from 'enzyme';
+import {configure, mount} from 'enzyme';
 import Board from "./Board";
+import adapter from 'enzyme-adapter-react-16';
+
+configure({adapter: new adapter()});
 
 describe("Board", () => {
-    it("check for win", () => {
-
-    });
-    it("can set marker in box that is clicked", () => {
+    xit("check for win", () => {
 
     });
 
-    it("can reset game on click", () => {
+    xit("can set marker in box that is clicked", () => {
 
     });
 
-    it("can make a put request with board data", () => {
+    xit("can reset game on click", () => {
 
     });
 
-    it("can convert board array to string", () => {
+    xit("can make a put request with board data", () => {
 
     });
 
-    it("initializes BoardState as a empty string array", () => {
+    xit("can convert board array to string", () => {
 
     });
 
-    it("initializes Turn as the string x", () => {
+    xit("initializes BoardState as a empty string array", () => {
+
+    });
+
+    xit("initializes Turn as the string x", () => {
 
     });
 });

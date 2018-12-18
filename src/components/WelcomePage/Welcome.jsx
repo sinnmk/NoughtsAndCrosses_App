@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
-import { Jumbotron } from 'reactstrap';
 import PropTypes from 'prop-types';
 import Game from '../Game/Game';
 
@@ -18,7 +16,6 @@ class Welcome extends Component {
 
     constructor(props) {
         super(props);
-        this.props = props;
         this.handleButtonClick = this.handleButtonClick.bind(this);
         this.state = {
             ShowGameComponent: false,
@@ -34,22 +31,17 @@ class Welcome extends Component {
     }
 
     render() {
-        const { classes } = this.props;
         return (
-            <div>
+            <div data-id="body">
                 {this.state.ShowWelcomeComponent ?
-                <Jumbotron style={{maxWidth: '600px', margin: 'auto'}}>
-                    <h1 data-id="welcome-msg">Welcome, to Noughts+Crosses!</h1>
-                    <p data-id="game-description">A simple site to play the popular game of Noughts + Crosses (Tic Tac Toe).</p>
-                    <div data-action="play-game" color="secondary" onClick={() => this.handleButtonClick()} className={classes.button}>
+                <div data-id="welcome">
+                    <div data-id="welcome-msg">Welcome, to Noughts+Crosses!</div>
+                    <div data-id="game-description">A simple site to play the popular game of Noughts + Crosses (Tic Tac Toe).</div>
+                    <div data-action="play-button" onClick={this.handleButtonClick} >
                         Play Game
                     </div>
-                </Jumbotron>
-                :null}
-                {this.state.ShowGameComponent ? 
-                <Game/>:
-                null
-                }
+                </div> :null}
+                {this.state.ShowGameComponent ? <Game/>: null}
             </div>
         );
     };

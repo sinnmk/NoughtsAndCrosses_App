@@ -9,21 +9,21 @@ function SimpleCard(props) {
   return (
     <Card className={classes.card} style={{maxWidth: '550px', margin: 'auto'}}>
       <CardContent>
-        <div>
+        <div data-id="title">
           <div data-id="game-title">
             Noughts + Crosses
           </div>
           <div data-id="sub-title">
             Game Rules
           </div>
-          <div data-id="game-rules">
-            The rules for playing noughts and crosses are very simple.
-            Each player takes it in turn to place their X or O into one
-            of the empty squares in the grid by clicking on it.
-            To win the game get three of your symbols in a
-            line horizontally, vertically or diagonally.
-            For the first game, X begins.
-          </div>
+        </div>
+        <div data-id="game-rules">
+          The rules for playing noughts and crosses are very simple.
+          Each player takes it in turn to place their X or O into one
+          of the empty squares in the grid by clicking on it.
+          To win the game get three of your symbols in a
+          line horizontally, vertically or diagonally.
+          For the first game, X begins.
         </div>
       </CardContent>
     </Card>

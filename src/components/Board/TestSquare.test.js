@@ -4,6 +4,6 @@ import Square from "./Square";
 
 describe("Square", () => {
     it("can render the square component", () => {
-
+        const wrapper = mount(<Square/>)
     });
 });

@@ -22,10 +22,6 @@ describe("Game", () => {
 
     });
 
-    it("can createGame based on button Click", () => {
-
-    });
-
     it("can show game component", () => {
 
     });
