@@ -9,6 +9,6 @@ configure ({adapter: new adapter()});
 describe("LandingPage", () => {
     it("can show the NavigationTopBar component", () => {
         const wrapper = mount(<LandingPage/>);
-        expect(wrapper.find(<NavigationTopBar/>)).toEqual(true);
+        expect(wrapper.find(<NavigationTopBar/>));
     });
 });
